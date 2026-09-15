@@ -1,0 +1,888 @@
+
+section {
+    border-top: var(--colorTextMuted) inset 2px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* =====================================================================
+   BOTONES GLOBALES
+   ===================================================================== */
+.btnPrimary,
+.btnOutline,
+.btnGhost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: var(--radiusFull);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform var(--transition), background var(--transition),
+        color var(--transition), border-color var(--transition), box-shadow var(--transition);
+    white-space: nowrap;
+}
+
+.btnPrimary {
+    background-color: var(--color-macaroni-and-cheese-500);
+    color: var(--color-macaroni-and-cheese-50);
+    box-shadow: 0 6px 24px rgba(252, 108, 19, 0.35);
+}
+
+.btnPrimary:hover {
+    background-color: var(--color-macaroni-and-cheese-400);
+    color: var(--color-macaroni-and-cheese-950);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(252, 108, 19, 0.5);
+}
+
+.btnOutline {
+    background: transparent;
+    color: var(--colorText);
+    border: 1.5px solid var(--colorBorder);
+}
+
+.btnOutline:hover {
+    border-color: var(--color-macaroni-and-cheese-500);
+    color: var(--color-macaroni-and-cheese-300);
+    transform: translateY(-2px);
+}
+
+.btnGhost {
+    background: transparent;
+    color: var(--colorTextMuted);
+    font-weight: 500;
+}
+
+.btnGhost:hover {
+    color: var(--color-macaroni-and-cheese-300);
+}
+
+.btnLarge {
+    padding: 16px 32px;
+    font-size: 1rem;
+}
+
+.btnFull {
+    width: 100%;
+}
+
+/* =====================================================================
+   HEADER
+   ===================================================================== */
+.mainHeader {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(14px);
+    background: rgba(10, 10, 10, 0.75);
+    border-bottom: 1px solid var(--colorBorder);
+}
+
+.headerInner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.brandLogo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+}
+
+.brandIcon {
+    color: var(--color-macaroni-and-cheese-500);
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.brandAccent {
+    color: var(--color-macaroni-and-cheese-500);
+}
+
+.mainNav {
+    display: flex;
+    gap: 28px;
+}
+
+.navLink {
+    color: var(--colorTextMuted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color var(--transition);
+    position: relative;
+}
+
+.navLink:hover {
+    color: var(--color-macaroni-and-cheese-300);
+}
+
+.navLink::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--color-macaroni-and-cheese-500);
+    transition: width var(--transition);
+}
+
+.navLink:hover::after {
+    width: 100%;
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* =====================================================================
+   HERO
+   ===================================================================== */
+.heroSection {
+    position: relative;
+    background-color: var(--colorBg);
+    overflow: hidden;
+}
+
+.heroGlow {
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background: url("https://scontent.fuio32-1.fna.fbcdn.net/v/t39.30808-6/768932438_1700634004754387_5562229897085133060_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1160&ctp=s2048x1160&_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=ueRARTVXhvQQ7kNvwHO0GKU&_nc_oc=AdpuKgHDneGaG6EmcVlI6FavErE1AyASrLgsdPyG29mUhE9woBf_joLibhPK_E6j9Uc&_nc_zt=23&_nc_ht=scontent.fuio32-1.fna&_nc_gid=1suzYYmr9Y-wXLjjKwiYpQ&_nc_ss=7b2a8&oh=00_AQJM64yxNSo9ikTwz0m22_DLM0zMvIHusZMai4J4atHR2w&oe=6AADD421");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+@media (max-width:700px) {
+    .heroGlow {
+        background-image: url("https://scontent.fuio32-1.fna.fbcdn.net/v/t39.30808-6/769055600_1700633968087724_7265471276562569269_n.jpg?stp=dst-jpg_tt6&cstp=mx1915x2048&ctp=s1915x2048&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=w0vOo4w0i_gQ7kNvwHkWIlP&_nc_oc=Adrvg08JnFuH1nVTbWI-lW23f79f4HYz41goCKdBfSM-11E5idZsoYwgn6gAvTA_8yo&_nc_zt=23&_nc_ht=scontent.fuio32-1.fna&_nc_gid=tQWFfA32tdPkHPVLoTq95A&_nc_ss=7b2a8&oh=00_AQLHMLSVZdVQQDSDw0nKLNjh11IV7L4naMAVG2-WdX_jmQ&oe=6AADE256");
+    }
+}
+.heroInner {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 150px 24px 80px;
+    background: linear-gradient(to top, var(--colorBg) 0%, transparent 100%) ;
+}
+
+.heroBadge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: var(--radiusFull);
+    background: rgba(252, 108, 19, 0.273);
+    border: 1px solid rgba(252, 108, 19, 0.4);
+    color: var(--color-macaroni-and-cheese-200);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 28px;
+}
+
+.heroTitle {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 22px;
+    color: white;
+}
+
+.heroHighlight {
+    background: linear-gradient(135deg,
+            var(--color-macaroni-and-cheese-400),
+            var(--color-macaroni-and-cheese-600));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.heroSubtitle {
+    color: var(--colorText-Transparent);
+    font-size: 1.1rem;
+    font-weight: 500;
+    max-width: 620px;
+    margin: 0 auto 40px;
+}
+
+.heroActions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 70px;
+}
+
+.heroStats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.statItem {
+    text-align: center;
+    padding: 20px;
+    border-radius: var(--radiusMd);
+    background: var(--colorSurface);
+    border: 1px solid var(--colorBorder);
+}
+
+.statNumber {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-macaroni-and-cheese-400);
+    letter-spacing: -0.02em;
+}
+
+.statLabel {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--colorTextMuted);
+    margin-top: 4px;
+}
+
+/* =====================================================================
+   LOGOS STRIP
+   ===================================================================== */
+.logosStrip {
+    padding: 40px 24px;
+    border-top: 1px solid var(--colorBorder);
+    border-bottom: 1px solid var(--colorBorder);
+    background: var(--colorSurface);
+}
+
+.logosLabel {
+    text-align: center;
+    color: var(--colorTextMuted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 22px;
+}
+
+.logosRow {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 48px;
+}
+
+.logoItem {
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    color: var(--colorTextMuted);
+    opacity: 0.6;
+    transition: opacity var(--transition), color var(--transition);
+}
+
+.logoItem:hover {
+    opacity: 1;
+    color: var(--color-macaroni-and-cheese-400);
+}
+
+/* =====================================================================
+   SECTION HEADER COMÚN
+   ===================================================================== */
+.sectionHeader {
+    max-width: 720px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.sectionKicker {
+    display: inline-block;
+    color: var(--color-macaroni-and-cheese-500);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+}
+
+.sectionTitle {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    color: var(--colorText-Transparent);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 14px;
+}
+
+.sectionSubtitle {
+    color: var(--colorTextMuted);
+    font-size: 1.05rem;
+}
+
+/* =====================================================================
+   SERVICIOS
+   ===================================================================== */
+.servicesSection {
+    padding: 100px 24px;
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: var(--colorBg);
+}
+
+.servicesSection h2 {
+    color: var(--colorText);
+}
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.serviceCard {
+    padding: 32px 28px;
+    background: var(--colorSurface);
+    border: 1px solid var(--colorBorder);
+    border-radius: var(--radiusLg);
+    transition: transform var(--transition), border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.serviceCard:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-macaroni-and-cheese-500);
+    box-shadow: var(--shadowGlow);
+}
+
+.serviceIcon {
+    color: white;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 18px;
+}
+
+.serviceTitle {
+    font-size: 1.15rem;
+    color: var(--color-macaroni-and-cheese-500);
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+}
+
+.serviceText {
+    color: var(--colorTextMuted);
+    font-size: 0.95rem;
+}
+
+/* =====================================================================
+   ARTISTAS
+   ===================================================================== */
+.artistsSection {
+    padding: 100px 24px;
+    max-width: 1280px;
+    margin: 0 auto;
+    background: radial-gradient(circle, var(--color-macaroni-and-cheese-950) 0%, var(--colorSurface) 70%,  var(--colorSurface) 100%);
+}
+
+.artistsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.artistCard {
+    background: var(--colorSurface);
+    border: 1px solid var(--colorBorder);
+    border-radius: var(--radiusLg);
+    overflow: hidden;
+    transition: transform var(--transition), border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.artistCard:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-macaroni-and-cheese-500);
+    box-shadow: var(--shadowGlow);
+}
+
+.artistCardFeatured {
+    grid-column: span 2;
+}
+
+.artistCover {
+    height: 240px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.artistCover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.85));
+}
+
+.artistCover1 {
+    background: url(https://scontent.fuio32-1.fna.fbcdn.net/v/t39.30808-6/768988602_1700634044754383_4465967074262774428_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1121&ctp=s2048x1121&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=a3VOxADTXPAQ7kNvwHNiTCE&_nc_oc=AdpZd9B2dBwSd-NQx8o3RsFDWxlkRPK1ao1dgGsgzkIYdnitg4fZ1pynzlkpq2qra_s&_nc_zt=23&_nc_ht=scontent.fuio32-1.fna&_nc_gid=F3oAbRzvPaIKjLlmy6dsTQ&_nc_ss=7b2a8&oh=00_AQID_VHDMVBkAu1gMrGxHPatgvyb_kHhV7DUtcW3OOk5tw&oe=6AAE3D67);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.artistCover2 {
+    background: linear-gradient(135deg, var(--color-macaroni-and-cheese-500), #0a0a0a);
+}
+
+.artistCover3 {
+    background: linear-gradient(135deg, var(--color-macaroni-and-cheese-800), #2a0a0a);
+}
+
+.artistCover4 {
+    background: linear-gradient(135deg, var(--color-macaroni-and-cheese-600), #101010);
+}
+
+.artistInfo {
+    padding: 22px;
+}
+
+.artistName {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--colorText-Transparent);
+}
+
+.artistGenre {
+    color: var(--colorTextMuted);
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+}
+
+.artistPlay {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: var(--radiusFull);
+    background: var(--color-macaroni-and-cheese-500);
+    color: var(--color-macaroni-and-cheese-50);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.artistPlay:hover {
+    background: var(--color-macaroni-and-cheese-400);
+    transform: translateY(-2px);
+}
+
+/* =====================================================================
+   PROCESO
+   ===================================================================== */
+.processSection {
+    padding: 100px 24px;
+    background: var(--colorSurface);
+    border-top: 1px solid var(--colorBorder);
+    border-bottom: 1px solid var(--colorBorder);
+}
+
+.processGrid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.processStep {
+    padding: 32px 24px;
+    border-radius: var(--radiusLg);
+    background: var(--colorSurfaceAlt);
+    border: 1px solid var(--colorBorder);
+    position: relative;
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+.processStep:hover {
+    border-color: var(--color-macaroni-and-cheese-500);
+    transform: translateY(-4px);
+}
+
+.stepNumber {
+    display: inline-block;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--color-macaroni-and-cheese-600);
+    line-height: 1;
+    margin-bottom: 14px;
+    letter-spacing: -0.04em;
+}
+
+.stepTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.stepText {
+    color: var(--colorTextMuted);
+    font-size: 0.92rem;
+}
+
+/* =====================================================================
+   PRECIOS
+   ===================================================================== */
+.pricingSection {
+    padding: 100px 24px;
+    max-width: 1280px;
+    margin: 0 auto;
+    background: linear-gradient(20deg, var(--colorBg) 0%, var(--colorBg) 20%, var(--color-macaroni-and-cheese-950) 50%, var(--colorBg) 80%, var(--colorBg) 100%);
+}
+
+.pricingGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+.priceCard {
+    background: var(--colorSurface);
+    border: 1px solid var(--colorBorder);
+    border-radius: var(--radiusLg);
+    padding: 36px 28px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform var(--transition), border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.priceCard:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-macaroni-and-cheese-500);
+}
+
+.priceCardFeatured {
+    border-color: var(--color-macaroni-and-cheese-500);
+    box-shadow: var(--shadowGlow);
+    background: linear-gradient(180deg, var(--colorSurfaceAlt), var(--colorSurface));
+}
+
+.priceBadge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-macaroni-and-cheese-500);
+    color: var(--color-macaroni-and-cheese-50);
+    padding: 6px 16px;
+    border-radius: var(--radiusFull);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.priceName {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.priceValue {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--color-macaroni-and-cheese-400);
+    line-height: 1;
+}
+
+.priceCurrency {
+    font-size: 1.4rem;
+    vertical-align: super;
+    color: var(--color-macaroni-and-cheese-500);
+    margin-right: 4px;
+}
+
+.pricePeriod {
+    color: var(--colorTextMuted);
+    font-size: 0.9rem;
+    margin: 6px 0 24px;
+}
+
+.priceFeatures {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+    flex: 1;
+}
+
+.priceFeatures li {
+    font-size: 0.92rem;
+    color: var(--colorTextMuted);
+    padding-left: 24px;
+    position: relative;
+}
+
+.priceFeatures li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-macaroni-and-cheese-500);
+    font-weight: 700;
+}
+
+/* =====================================================================
+   TESTIMONIOS
+   ===================================================================== */
+.testimonialsSection {
+    padding: 100px 24px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.testimonialsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.testimonialCard {
+    padding: 32px 28px;
+    border-radius: var(--radiusLg);
+    background: var(--colorSurface);
+    border: 1px solid var(--colorBorder);
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+.testimonialCard:hover {
+    border-color: var(--color-macaroni-and-cheese-500);
+    transform: translateY(-4px);
+}
+
+.testimonialText {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    color: var(--colorText);
+}
+
+.testimonialAuthor {
+    color: var(--color-macaroni-and-cheese-400);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* =====================================================================
+   CTA FINAL
+   ===================================================================== */
+.ctaSection {
+    padding: 100px 24px;
+    background: linear-gradient(180deg,
+            var(--colorSurface) 0%,
+            var(--colorBg) 100%);
+    border-top: 1px solid var(--colorBorder);
+}
+
+.ctaInner {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ctaTitle {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+    color: var(--colorText);
+}
+
+.ctaText {
+    color: var(--colorTextMuted);
+    font-size: 1.05rem;
+    margin-bottom: 32px;
+}
+
+.ctaForm {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.ctaInput {
+    flex: 1;
+    min-width: 240px;
+    padding: 16px 22px;
+    border-radius: var(--radiusFull);
+    border: 1.5px solid var(--colorBorder);
+    background: var(--colorSurface);
+    color: var(--colorText);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.ctaInput:focus {
+    outline: none;
+    border-color: var(--color-macaroni-and-cheese-500);
+    box-shadow: 0 0 0 4px rgba(252, 108, 19, 0.15);
+}
+
+.ctaInput::placeholder {
+    color: var(--colorTextMuted);
+}
+
+.ctaNote {
+    color: var(--color-macaroni-and-cheese-400);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* =====================================================================
+   FOOTER
+   ===================================================================== */
+.mainFooter {
+    background: var(--colorBg);
+    border-top: 1px solid var(--colorBorder);
+    padding: 60px 24px 24px;
+}
+
+.footerInner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footerBrand .brandName {
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.footerText {
+    color: var(--colorTextMuted);
+    font-size: 0.9rem;
+    margin-top: 12px;
+    max-width: 320px;
+}
+
+.footerTitle {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 16px;
+    color: var(--colorText);
+}
+
+.footerLink {
+    display: block;
+    color: var(--colorTextMuted);
+    font-size: 0.9rem;
+    padding: 5px 0;
+    transition: color var(--transition);
+}
+
+.footerLink:hover {
+    color: var(--color-macaroni-and-cheese-400);
+}
+
+.footerBottom {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 24px;
+    border-top: 1px solid var(--colorBorder);
+    text-align: center;
+    color: var(--colorTextMuted);
+    font-size: 0.85rem;
+}
+
+/* =====================================================================
+   RESPONSIVE
+   ===================================================================== */
+@media (max-width: 900px) {
+    .mainNav {
+        display: none;
+    }
+
+    .artistCardFeatured {
+        grid-column: span 1;
+    }
+
+    .footerInner {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .headerActions .btnGhost {
+        display: none;
+    }
+
+    .heroStats {
+        grid-template-columns: 1fr;
+    }
+
+    .heroActions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .heroActions .btnLarge {
+        width: 100%;
+    }
+
+    .footerInner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .ctaForm {
+        flex-direction: column;
+    }
+
+    .ctaForm .btnLarge {
+        width: 100%;
+    }
+}

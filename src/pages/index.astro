@@ -1,8 +1,10 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import '../styles/index.css';
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import { Icon } from 'astro-icon/components';
 ---
 
 <!doctype html>
@@ -12,38 +14,339 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	</head>
 	<body>
 		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
+		<section class="heroSection">
+			<div class="heroGlow"></div>
+			<div class="heroInner">
+				<span class="heroBadge"
+					>DONDE SE GRABO A PURIK DREAMS</span
+				>
+				<h1 class="heroTitle">
+					¿Listo para plasmar tu canción y hacer vibrar 
+					<span class="heroHighlight"> Ecuador</span>?
+				</h1>
+				<p class="heroSubtitle">
+					Henry Gómez · MS Records · Producción musical en Otavalo,
+				Ecuador. Más de 15 años dando vida a proyectos de artistas y
+				bandas de la región andina
+				</p>
+
+				<div class="heroActions">
+					<a href="#contacto" class="btnPrimary btnLarge">
+						Reserva tu primera sessión
+					</a>
+					<a href="https://open.spotify.com/intl-es/artist/0RCpOal9msrFgBeNkVJN3L" target="_blank" class="btnOutline btnLarge">
+						▶ Escuchar portafolio
+					</a>
+				</div>
+
+				<div class="heroStats">
+					<div class="statItem">
+						<span class="statNumber">+300</span>
+						<span class="statLabel">Sesiones grabadas</span>
+					</div>
+					<div class="statItem">
+						<span class="statNumber">100+</span>
+						<span class="statLabel">Artistas producidos</span>
+					</div>
+					<div class="statItem">
+						<span class="statNumber">4.9★</span>
+						<span class="statLabel">Valoración de artistas</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ LOGOS / SELLOS ============ -->
+		<section class="logosStrip">
+			<p class="logosLabel">Nuestras colaboraciones en </p>
+			<div class="logosRow">
+				<span class="logoItem">SPOTIFY</span>
+				<span class="logoItem">YOUTUBE</span>
+				<span class="logoItem">APPLEMUSIC</span>
+			</div>
+		</section>
+
+		<!-- ============ SERVICIOS ============ -->
+		<section id="servicios" class="servicesSection">
+			<div class="sectionHeader">
+				<span class="sectionKicker">Servicios</span>
+				<h2 class="sectionTitle">Todo lo que tu proyecto necesita</h2>
+				<p class="sectionSubtitle">
+					Desde la primera toma hasta el lanzamiento en plataformas
+					digitales.
+				</p>
+			</div>
+
+			<div class="servicesGrid">
+				<article class="serviceCard">
+					<Icon name="material-symbols:keyboard-voice" class="serviceIcon"/>
+					<h3 class="serviceTitle">Grabación profesional</h3>
+					<p class="serviceText">
+						Cabinas tratadas acústicamente, micrófonos alta gama.
+					</p>
+				</article>
+
+				<article class="serviceCard">
+					<Icon name="material-symbols:settings-input-component-rounded" class="serviceIcon"/>
+					<h3 class="serviceTitle">Mezcla & Masterización</h3>
+					<p class="serviceText">
+						Entrega final óptima para cualquier plataforma.
+					</p>
+				</article>
+
+				<article class="serviceCard">
+					<Icon name="material-symbols:headset-mic-rounded" class="serviceIcon"/>
+					<h3 class="serviceTitle">Producción musical</h3>
+					<p class="serviceText">
+						Beatmaking, arreglos, sesiones con músicos en vivo y
+						dirección artística.
+					</p>
+				</article>
+
+				<article class="serviceCard">
+					<Icon name="material-symbols:frame-person-rounded" class="serviceIcon"/>
+					<h3 class="serviceTitle">Asesoría artistica</h3>
+					<p class="serviceText">
+						Brindamos asesoría de imagen y recomendaciones para elevar tu carrera musical. 
+					</p>
+				</article>
+
+				<article class="serviceCard">
+					<Icon name="material-symbols:video-camera-back-outline" class="serviceIcon"/>
+					<h3 class="serviceTitle">Videoclips & contenido</h3>
+					<p class="serviceText">
+						Acompañamiento con el rodaje, edición y estrategia de contenido para redes sociales.
+					</p>
+				</article>
+
+				<article class="serviceCard">
+					<Icon name="material-symbols:monitoring-rounded" class="serviceIcon"/>
+					<h3 class="serviceTitle">Marketing musical</h3>
+					<p class="serviceText">
+						Promoción en plataformas relevantes y growth orgánico para tu proyecto.
+					</p>
+				</article>
+			</div>
+		</section>
+
+		<!-- ============ ARTISTAS / PORTAFOLIO ============ -->
+		<section id="artistas" class="artistsSection">
+			<div class="sectionHeader">
+				<span class="sectionKicker">Nuestro sello</span>
+				<h2 class="sectionTitle">Artistas que confían en nosotros</h2>
+				<p class="sectionSubtitle">
+					Más de 300 proyectos producidos en los últimos años.
+				</p>
+			</div>
+
+			<div class="artistsGrid">
+				<article class="artistCard artistCardFeatured">
+					<div class="artistCover artistCover1"></div>
+					<div class="artistInfo">
+						<h3 class="artistName">PURIK DREAMS</h3>
+						<p class="artistGenre">Folkro eléctrico · +5.3M vistas</p>
+						<button class="artistPlay">▶ Reproducir</button>
+					</div>
+				</article>
+
+				<article class="artistCard">
+
+					<div class="artistCover artistCover2"></div>
+					<div class="artistInfo">
+						<h3 class="artistName">KDNA</h3>
+						<p class="artistGenre">Trap Latino · +34M streams</p>
+						<button class="artistPlay">▶ Reproducir</button>
+					</div>
+				</article>
+
+				<article class="artistCard">
+					<div class="artistCover artistCover3"></div>
+					<div class="artistInfo">
+						<h3 class="artistName">Mar de Tinta</h3>
+						<p class="artistGenre">
+							Rock Alternativo · +8M streams
+						</p>
+						<button class="artistPlay">▶ Reproducir</button>
+					</div>
+				</article>
+
+				<article class="artistCard">
+					<div class="artistCover artistCover4"></div>
+					<div class="artistInfo">
+						<h3 class="artistName">Sofi Lunar</h3>
+						<p class="artistGenre">R&amp;B · +21M streams</p>
+						<button class="artistPlay">▶ Reproducir</button>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<!-- ============ PROCESO ============ -->
+		<section id="proceso" class="processSection">
+			<div class="sectionHeader">
+				<span class="sectionKicker">Cómo funciona</span>
+				<h2 class="sectionTitle">Tu canción lista en 4 pasos</h2>
+			</div>
+
+			<div class="processGrid">
+				<div class="processStep">
+					<span class="stepNumber">01</span>
+					<h3 class="stepTitle">Reservas</h3>
+					<p class="stepText">
+						Eliges fecha y modalidad: presencial o remoto.
+					</p>
+				</div>
+				<div class="processStep">
+					<span class="stepNumber">02</span>
+					<h3 class="stepTitle">Grabación</h3>
+					<p class="stepText">
+						Nuestro ingeniero te guía para capturar la mejor toma.
+					</p>
+				</div>
+				<div class="processStep">
+					<span class="stepNumber">03</span>
+					<h3 class="stepTitle">Producción</h3>
+					<p class="stepText">
+						Mezcla, master y feedback ilimitado hasta que estés
+						feliz.
+					</p>
+				</div>
+				<div class="processStep">
+					<span class="stepNumber">04</span>
+					<h3 class="stepTitle">Lanzamiento</h3>
+					<p class="stepText">
+						Publicamos en todas las plataformas y celebramos
+						contigo.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ PRECIOS ============ -->
+		<section id="precios" class="pricingSection">
+			<div class="sectionHeader">
+				<span class="sectionKicker">Planes</span>
+				<h2 class="sectionTitle">Elige el nivel de tu próximo hit</h2>
+				<p class="sectionSubtitle">
+					Sin contratos ocultos. Cancelas cuando quieras.
+				</p>
+			</div>
+
+			<div class="pricingGrid">
+				<article class="priceCard">
+					<h3 class="priceName">Starter</h3>
+					<p class="priceValue">
+						<span class="priceCurrency">$</span>149
+					</p>
+					<p class="pricePeriod">por canción</p>
+					<ul class="priceFeatures">
+						<li>2 horas de grabación</li>
+						<li>Mezcla profesional</li>
+						<li>1 master para streaming</li>
+						<li>Entrega en 5 días</li>
+					</ul>
+					<a href="#contacto" class="btnOutline btnFull">Empezar</a>
+				</article>
+
+				<article class="priceCard priceCardFeatured">
+					<span class="priceBadge">Más popular</span>
+					<h3 class="priceName">Pro Artist</h3>
+					<p class="priceValue">
+						<span class="priceCurrency">$</span>349
+					</p>
+					<p class="pricePeriod">por canción</p>
+					<ul class="priceFeatures">
+						<li>6 horas de grabación</li>
+						<li>Producción completa</li>
+						<li>Mezcla + master Dolby Atmos</li>
+						<li>Distribución a +150 plataformas</li>
+						<li>Entrega en 3 días</li>
+					</ul>
+					<a href="#contacto" class="btnPrimary btnFull"
+						>Reservar ahora</a
+					>
+				</article>
+
+				<article class="priceCard">
+					<h3 class="priceName">Label</h3>
+					<p class="priceValue">
+						<span class="priceCurrency">$</span>899
+					</p>
+					<p class="pricePeriod">por EP (4 canciones)</p>
+					<ul class="priceFeatures">
+						<li>Producción integral del EP</li>
+						<li>Videoclip de una canción</li>
+						<li>Campaña de marketing</li>
+						<li>Playlisting garantizado</li>
+						<li>Manager dedicado</li>
+					</ul>
+					<a href="#contacto" class="btnOutline btnFull"
+						>Hablar con un productor</a
+					>
+				</article>
+			</div>
+		</section>
+
+		<!-- ============ TESTIMONIOS ============ -->
+		<section class="testimonialsSection">
+			<div class="sectionHeader">
+				<span class="sectionKicker">Testimonios</span>
+				<h2 class="sectionTitle">Lo que dicen nuestros artistas</h2>
+			</div>
+
+			<div class="testimonialsGrid">
+				<blockquote class="testimonialCard">
+					<p class="testimonialText">
+						"Grabé mi primer EP en Echo Studio y en 3 meses ya
+						estaba en playlist editorial de Spotify."
+					</p>
+					<footer class="testimonialAuthor">— Luna Vela</footer>
+				</blockquote>
+
+				<blockquote class="testimonialCard">
+					<p class="testimonialText">
+						"La calidad del master y el nivel de detalle del equipo
+						es de otro planeta."
+					</p>
+					<footer class="testimonialAuthor">— KDNA</footer>
+				</blockquote>
+
+				<blockquote class="testimonialCard">
+					<p class="testimonialText">
+						"No solo graban: te acompañan en todo el proceso
+						creativo y de negocio."
+					</p>
+					<footer class="testimonialAuthor">— Mar de Tinta</footer>
+				</blockquote>
+			</div>
+		</section>
+
+		<!-- ============ CTA FINAL ============ -->
+		<section id="contacto" class="ctaSection">
+			<div class="ctaInner">
+				<h2 class="ctaTitle">¿Listo para grabar tu próximo hit?</h2>
+				<p class="ctaText">
+					Reserva una sesión de descubrimiento gratuita. Sin
+					compromiso.
+				</p>
+
+				<form class="ctaForm" onsubmit="event.preventDefault();">
+					<input
+						type="email"
+						class="ctaInput"
+						placeholder="tu@email.com"
+						aria-label="Correo electrónico"
+						required
+					/>
+					<button type="submit" class="btnPrimary btnLarge"
+						>Reservar sesión gratis</button
+					>
+				</form>
+
+				<p class="ctaNote">Solo 5 cupos disponibles este mes.</p>
+			</div>
+		</section>
+
 		<Footer />
 	</body>
 </html>

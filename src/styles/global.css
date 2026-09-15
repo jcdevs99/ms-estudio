@@ -15,7 +15,57 @@
 	--box-shadow:
 		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
+
+	/* Superficies y texto */
+    --colorBg: #0a0a0a;
+    --colorBg-transparent: #0a0a0a98;
+
+    --colorSurface: #121212;
+    --colorSurfaceAlt: #1a1a1a;
+    --colorBorder: #262626;
+    --colorText: #f5f5f5;
+	--colorText-Transparent:#ffffffac;
+    --colorTextMuted: #868686;
+
+    /* Tipografía */
+    --fontBase: var(--font-atkinson), "Inter", "Helvetica Neue", system-ui, -apple-system, sans-serif;
+
+    /* Espaciado y radios */
+    --radiusSm: 8px;
+    --radiusMd: 14px;
+    --radiusLg: 24px;
+    --radiusFull: 999px;
+
+    /* Sombras */
+    --shadowGlow: 0 0 60px rgba(252, 108, 19, 0.35);
+    --shadowCard: 0 10px 40px rgba(0, 0, 0, 0.5);
+
+    /* Transición */
+    --transition: 0.25s ease;
+
+
+  /* Macaroni and Cheese */
+  --color-macaroni-and-cheese-50: #fff6ed;
+  --color-macaroni-and-cheese-100: #ffebd4;
+  --color-macaroni-and-cheese-200: #ffd5a9;
+  --color-macaroni-and-cheese-300: #ffb570;
+  --color-macaroni-and-cheese-400: #fe8c39;
+  --color-macaroni-and-cheese-500: #fc6c13;
+  --color-macaroni-and-cheese-600: #ed5109;
+  --color-macaroni-and-cheese-700: #c53a09;
+  --color-macaroni-and-cheese-800: #9c2f10;
+  --color-macaroni-and-cheese-900: #7e2910;
+  --color-macaroni-and-cheese-950: #441206;
+
 }
+
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
 	font-family: var(--font-atkinson);
 	margin: 0;
@@ -28,13 +78,9 @@ body {
 	color: rgb(var(--gray-dark));
 	font-size: 20px;
 	line-height: 1.7;
+	box-sizing: border-box;
 }
-main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
-}
+
 h1,
 h2,
 h3,
